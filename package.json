@@ -8,15 +8,18 @@
     "dev": "concurrently -k \"vite\" \"npm run electron:dev\"",
     "build": "vite build",
     "preview": "vite preview",
+    "bp": "vite build && vite preview",
     "start": "npm run build && npm run electron:start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "electron:start": "electron-forge start",
     "electron:dev": "cross-env IS_DEV=true PORT='5173' electron-forge start",
-    "test":"concurrently -k \"vite build && vite preview\"  \"cross-env IS_DEV=true PORT='4173' electron-forge start\" "
+    "test": "concurrently -k \"npm run preview\"  \"cross-env IS_DEV=true PORT='4173' electron-forge start\" --kill-others-on-fail"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
     "electron-squirrel-startup": "^1.0.0",
+    "element-plus": "^2.3.7",
     "vue": "^3.3.4"
   },
   "devDependencies": {
