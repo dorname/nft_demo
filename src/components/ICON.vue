@@ -49,6 +49,9 @@ const iconStyle = props.style
 </template>
 
 <style scoped>
+/*
+为图标增加悬浮小手 
+ */
 .userCls{
   cursor: pointer;
 }
