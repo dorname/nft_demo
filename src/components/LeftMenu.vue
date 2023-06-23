@@ -5,25 +5,29 @@ const props  = defineProps({
     type: Array,
     required: false
   },
-  textMenu:{
-    type: String,
-    required: true
+  style:{
+    type:Object,
+    required:false
   }
 })
-const text = props.textMenu;
+// const text = props.textMenu;
+const menus = props.menus;
+const style = props.style;
 // const style = {
 //   color:"white",
 //   width:"100px"
 // }
-const handler = function(){
-  alert("hhhhaa");
-}
+// const handler = function(){
+//   alert("hhhhaa");
+// }
 </script>
 <template>
     <div class="menus">
       <!-- <Icon :icon-name="'House'" :color="'white'" :size="'25'" :style="style"/> -->
-      <Icon :icon-name="'House'" :color="'white'" :size="'25'" :handler="handler"/>
-      <Icon :icon-name="'Search'" :color="'white'" :size="'25'" />
+      <span class="menuspan" v-for="menu in menus" :style="style">
+      <Icon :icon-name="menu.name" :color="menu.color" :size="menu.size" :handler="menu.handler" />
+      </span>
+      <!-- <Icon :icon-name="'Search'" :color="'white'" :size="'25'" /> -->
     </div>    
 </template>
 
