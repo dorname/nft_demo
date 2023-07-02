@@ -3,7 +3,7 @@
 </template>
 <style scoped>
 .right .right-down {
-    background-color: red !important;
+    background-color: red;
     height: 10%;
 }
 </style>
